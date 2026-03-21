@@ -1,0 +1,32 @@
+name: madar_marbert
+pretrained_path: UBC-NLP/MARBERT
+data_root: ../dicts/madar
+train_path_template: "{src}_msa_train.txt"
+test_path_template: "{src}_msa_test.txt"
+pairs:
+  - [algeria, msa]
+  - [egypt, msa]
+  - [gulf, msa]
+  - [iraq, msa]
+  - [libya, msa]
+  - [morocco, msa]
+  - [n_lev, msa]
+  - [s_lev, msa]
+  - [sudan, msa]
+  - [tunisia, msa]
+  - [yemen, msa]
+template_language: ar
+prediction_token: "<mask>"
+source_pad_token: "<mask>"
+padding_token: "<pad>"
+num_prediction_tokens: 1
+max_length: 20
+epochs: 5
+lr: 2.0e-5
+batch_size: 64
+num_workers: 1
+seed: 42
+lowercase: false
+ignore_identical_train_pairs: true
+max_tokenized_word_length: 1
+output_dir: outputs/madar_marbert

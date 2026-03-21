@@ -1,0 +1,40 @@
+name: multilingual_xling_5k
+pretrained_path: FacebookAI/xlm-mlm-17-1280
+data_root: ../dicts/xling_5k
+train_path_template: "{src}_{tgt}_train.txt"
+test_path_template: "{src}_{tgt}_test.txt"
+pairs:
+  - [de, fr]
+  - [de, it]
+  - [de, ru]
+  - [de, tr]
+  - [en, de]
+  - [en, fr]
+  - [en, it]
+  - [en, ru]
+  - [en, tr]
+  - [it, fr]
+  - [ru, fr]
+  - [ru, it]
+  - [tr, fr]
+  - [tr, it]
+  - [tr, ru]
+template_language: en
+prediction_token: "<special1>"
+source_pad_token: "<special1>"
+padding_token: "<pad>"
+num_prediction_tokens: 4
+max_length: 20
+epochs: 5
+lr: 2.0e-5
+batch_size: 64
+num_workers: 1
+seed: 42
+lowercase: true
+ignore_identical_train_pairs: true
+max_tokenized_word_length: 4
+similarity_candidates_dir: ../preds/extra
+similarity_path_template: "{src}_{tgt}_5000_before_merge.pickle"
+similarity_temperature: 0.1
+similarity_top_k: 10
+output_dir: outputs/multilingual_xling_5k
