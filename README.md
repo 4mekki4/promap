@@ -209,6 +209,8 @@ python scripts/summarize_local_results.py
 
 ## Citation
 
+If you used this code in your research, please make sure to cite our work
+
 ```bibtex
 @inproceedings{el-mekki-etal-2023-promap,
     title = "{P}ro{M}ap: Effective Bilingual Lexicon Induction via Language Model Prompting",
